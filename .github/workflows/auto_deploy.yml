@@ -25,9 +25,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: intalling node
         uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
 
       # Runs a set of commands using the runners shell
       - name: intalling surge
         run: npm install --global surge
       - name: deploy using surge
-        run: surge ./ super-bootcamp2020sample_01.surge.sh --token {{ secrets.SURGE_TOKEN }}
+        run: surge ./ bootcamp2020sample.surge.sh --token {{ secrets.SURGE_TOKEN }}
